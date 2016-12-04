@@ -1,0 +1,9 @@
+*.cache 
+*~
+*.dex
+*.apk
+
+./bin/*
+./.settings/*
+./assets/*
+./gen/*
