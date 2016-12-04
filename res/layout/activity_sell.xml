@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sell_page"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/light_gray_line"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/base_title_height"
+        android:background="@color/head_color" >
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/activity_back_btn_size"
+            android:layout_height="@dimen/activity_back_btn_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/title_margin_left"
+            android:layout_marginRight="@dimen/back_btn_margin_right"
+            android:background="@drawable/btn_back"
+            android:gravity="center"
+            android:paddingLeft="7.0dip" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="2dip"
+            android:layout_toRightOf="@id/btn_back"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@id/base_title_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingLeft="@dimen/title_padding_left"
+            android:paddingRight="@dimen/title_padding_right"
+            android:singleLine="true"
+            android:text="@string/item_sell"
+            android:textColor="@color/btn_text_color_white"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@id/body"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/body_margin_left_right"
+        android:layout_marginRight="@dimen/body_margin_left_right"
+        android:orientation="vertical"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/item_margin_size"
+                android:layout_marginRight="@dimen/item_margin_size"
+                android:layout_marginTop="15.0dip"
+                android:background="@drawable/bg_form_top"
+                android:paddingLeft="10.0dip"
+                android:paddingTop="10.0dip"
+                android:text="@string/sell_title"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/login_forget_pw_text_gray" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/item_margin_size"
+                android:layout_marginRight="@dimen/item_margin_size"
+                android:background="@drawable/bg_advice_form"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/etxt_sell"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="@string/sell_hint"
+                    android:inputType="textMultiLine"
+                    android:lines="10" 
+                    android:maxLength="1000"/>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="@dimen/button_submit_width"
+                    android:layout_height="@dimen/button_submit_height"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/button_submit_margin_bottom"
+                    android:layout_marginLeft="30dip"
+                    android:layout_marginRight="30dip"
+                    android:layout_marginTop="@dimen/button_submit_margin_top"
+                    android:background="@drawable/btn_rectangle_selector"
+                    android:text="@string/submit"
+                    android:textSize="@dimen/label_item_text_size" />
+            </LinearLayout>
+            <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        layout="@layout/layout_footer" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

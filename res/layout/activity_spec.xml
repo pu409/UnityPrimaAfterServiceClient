@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_gray_line"
+    >
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/base_title_height"
+        android:background="@color/head_color" >
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/activity_back_btn_size"
+            android:layout_height="@dimen/activity_back_btn_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/title_margin_left"
+            android:layout_marginRight="@dimen/back_btn_margin_right"
+            android:background="@drawable/btn_back"
+            android:gravity="center"
+            android:paddingLeft="7.0dip" />
+        <View
+            android:id="@+id/line"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:layout_marginLeft="2dip"
+            android:layout_toRightOf="@id/btn_back"/>
+
+        <TextView
+            android:id="@id/base_title_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingLeft="@dimen/title_padding_left"
+            android:paddingRight="@dimen/title_padding_right"
+            android:singleLine="true"
+            android:text="@string/item_consult"
+            android:textColor="@color/btn_text_color_white"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+    </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            
+           <ListView
+            android:id="@+id/lv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/spec_padding_left"
+            android:paddingRight="@dimen/spec_padding_right"
+            android:divider="@color/white"
+            android:dividerHeight="1dp" >
+        </ListView>
+        </LinearLayout>
+<include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        layout="@layout/layout_footer" />
+</LinearLayout>
