@@ -1,13 +1,12 @@
 package com.slamke.afterservice.util;
 
-public class Message {
-	private Message() {
-	}
+public abstract class Message {
 
 	public static final String SELECT_METHOD = "请选择信息的传输方式？";
 	public static final String SETTING_UPDATE = "请输入更新后的设置信息？";
 	public static final String ADD_PRODUCT_NUMBER = "请输入需要添加的产品序列号？";
-	public final static String TEL_EMPTY = "检测不到本机号码，无法登录";
+	public final static String TEL_EMPTY = "请输入您的手机号码";
+	public final static String CODE_EMPTY = "请输入正确的验证码";
 	public final static String ADVICE_EMPTY = "请输入您的建议内容";
 	public final static String COMMENT_UNSTATISFY_REASON = "请输入您对于服务不满意的原因";
 	public final static String DEVICE_EMPTY = "请选择您保修的产品序列号";
@@ -15,6 +14,11 @@ public class Message {
 	public final static String COMPLAINT_EMPTY = "请输入您的投诉内容";
 	public final static String SELL_EMPTY = "请输入您想要购买的备件细项内容";
 	public final static String TEL_ERROR = "请您输入正确的手机号码";
+	public final static String TEL_CODE_ERROR = "手机号码或者验证码输入错误";
+	
+	public final static String TEL_CODE_SUCCESS = "验证码已经成功发送！";
+	
+	public final static String TEL_NONEXISTS = "对不起，您的手机号码尚未录入系统，请联系客服人员录入!";
 	public final static String NETWORK_ERROR = "网络连接错误，请您重新提交";
 	
 	public final static String NETWORK_ERROR_LOGIN = "网络连接错误，请您重新登录";

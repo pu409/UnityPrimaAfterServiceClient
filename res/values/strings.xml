@@ -4,7 +4,7 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 	<string name="login_user_name_hint">手机号码</string>
-    <string name="login_user_password_hint">密码</string>
+    <string name="login_user_password_hint">验证码</string>
     <string name="login_login_btn_tv">登 录</string>
     <string name="submit">提交</string>
     <string name="login_forget_pw">忘记密码?</string>

@@ -24,12 +24,19 @@ import android.util.Log;
 import com.slamke.afterservice.util.Message;
 
 public class LoginService {
+    
 	private HttpClient httpclient;
+	
 	private final static String TEL = "tel"; 
 	
+	private final static String AUTH_CODE = "authCode";
+	
 	private String url;
-	private final int REQUEST_TIMEOUT = 10 * 1000;// 设置请求超时5秒钟
+	
+	private final int REQUEST_TIMEOUT = 10 * 1000; // 设置请求超时5秒钟
+	
 	private final int SO_TIMEOUT = 10 * 1000; // 设置等待数据超时时间5秒钟
+	
 	public LoginService(String url) {
 		BasicHttpParams httpParams = new BasicHttpParams();
 		httpParams.setParameter("charset", HTTP.UTF_8); 
@@ -40,9 +47,9 @@ public class LoginService {
 		this.url = url;
 	}
 
-	public String login(String tel) {
+	public String getAuthCode(String tel) {
 		try {
-			Log.i("url", url);
+			Log.d("url", url);
 			HttpPost httpPost = new HttpPost(url);
 			httpPost.addHeader("Accept", "application/json");
 			Map<String, String> map = new HashMap<String, String>(); 
@@ -67,6 +74,39 @@ public class LoginService {
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
 			return Message.NETWORK_FAIL;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return Message.NETWORK_FAIL;
+	}
+	
+	public String login(String tel, String code) {
+		try {
+			Log.d("url", url);
+			HttpPost httpPost = new HttpPost(url);
+			httpPost.addHeader("Accept", "application/json");
+			Map<String, String> map = new HashMap<String, String>(); 
+			map.put(TEL, tel);
+			map.put(AUTH_CODE, code);
+			List<BasicNameValuePair> postData = new ArrayList<BasicNameValuePair>(); 
+			for (Map.Entry<String, String> entry : map.entrySet()) {
+			    postData.add(new BasicNameValuePair(entry.getKey(), 
+			    entry.getValue())); 
+			}
+			UrlEncodedFormEntity entity = new UrlEncodedFormEntity( 
+			                            postData, HTTP.UTF_8);
+			httpPost.setEntity(entity);		
+			HttpResponse response = httpclient.execute(httpPost);
+			HttpEntity entity1 = response.getEntity();
+			InputStream instream = entity1.getContent();
+			String jaxrsmessage = "";
+			jaxrsmessage = Reader.read(instream);
+			Log.i("jaxrsmessage", jaxrsmessage);
+			httpPost.abort();
+			return jaxrsmessage;
+
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
